@@ -309,7 +309,6 @@ xkb_symbols "sundeadkeys" {
 //
 //      http://www.neo-layout.org
 //
-// $Revision$, $Date$
 
 partial alphanumeric_keys modifier_keys keypad_keys
 xkb_symbols "neo_base" {
