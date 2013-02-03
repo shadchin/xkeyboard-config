@@ -54,7 +54,7 @@ host_triplet = @host@
 subdir = symbols
 DIST_COMMON = $(srcdir)/Makefile.am $(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/configure.in
+am__aclocal_m4_deps = $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(install_sh) -d
@@ -289,7 +289,7 @@ xkb_rules_symlink = @xkb_rules_symlink@
 SUBDIRS = digital_vndr fujitsu_vndr hp_vndr macintosh_vndr nec_vndr nokia_vndr sharp_vndr sgi_vndr sony_vndr sun_vndr xfree68_vndr
 symbolsdir = $(xkb_base)/symbols
 symbols_DATA = \
-ad af al \
+af al \
 am apl ara \
 at az \
 ba bd be \

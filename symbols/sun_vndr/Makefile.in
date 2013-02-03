@@ -55,7 +55,7 @@ subdir = symbols/sun_vndr
 DIST_COMMON = $(dist_symbols_DATA) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in
 ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
-am__aclocal_m4_deps = $(top_srcdir)/configure.in
+am__aclocal_m4_deps = $(top_srcdir)/configure.ac
 am__configure_deps = $(am__aclocal_m4_deps) $(CONFIGURE_DEPENDENCIES) \
 	$(ACLOCAL_M4)
 mkinstalldirs = $(install_sh) -d
@@ -254,7 +254,7 @@ dist_symbols_DATA = \
  fi fr gb gr it \
  jp kr lt lv nl \
  no pl pt ro ru \
- se sk solaris tr tuv \
+ se sk solaris tr \
  tw ua us
 
 all: all-am
