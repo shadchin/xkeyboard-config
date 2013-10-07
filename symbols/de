@@ -107,8 +107,6 @@ xkb_symbols "deadacute" {
 
 partial alphanumeric_keys
 xkb_symbols "T3" {
-    include "latin(type4)"
-
     name[Group1]="German (T3)";
 
     key.type[Group1] = "EIGHT_LEVEL";
@@ -151,7 +149,7 @@ xkb_symbols "T3" {
     key <AC05> { [               g,               G,         seconds,        NoSymbol,             eng,             ENG, dead_belowmacron,       NoSymbol ] };
     key <AC06> { [               h,               H,           U1E9E,        NoSymbol,           U0272,           U019D,           U0332,        NoSymbol ] };
     key <AC07> { [               j,               J,    dead_cedilla,        NoSymbol,           U0133,           U0132,  dead_belowring,        NoSymbol ] };
-    key <AC08> { [               k,               K, dead_belowcomma,        NoSymbol,             kra, dead_belowcomma,           U0335,        NoSymbol ] };
+    key <AC08> { [               k,               K, dead_belowcomma,        NoSymbol,             kra, dead_belowcomma,     dead_stroke,        NoSymbol ] };
     key <AC09> { [               l,               L,     dead_ogonek,        NoSymbol,         lstroke,         Lstroke,           U0338,        NoSymbol ] };
     key <AC10> { [      odiaeresis,      Odiaeresis,   dead_belowdot,        NoSymbol,      dead_acute, dead_doubleacute,         degree,        NoSymbol ] };
     key <AC11> { [      adiaeresis,      Adiaeresis,     dead_stroke,        NoSymbol,           U019B,           U1E9E,         minutes,        NoSymbol ] };
@@ -176,10 +174,12 @@ xkb_symbols "T3" {
 
     include "kpdl(comma)"
 
-    // We do not support the correct level selection mechanism yet, this is
-    //just for testing:
-    include "level5(rctrl_switch)"
-    include "level3(ralt_switch)"
+    include "level5(modifier_mapping)"
+    include "level3(modifier_mapping)"
+    key.type[Group1] = "THREE_LEVEL";
+    key <LFSH> { [ Shift_L, Shift_L, ISO_Level5_Latch ] };
+    key <RTSH> { [ Shift_R, Shift_R, ISO_Level5_Latch ] };
+    key <RALT> { [ ISO_Level3_Latch, ISO_Level5_Latch, ISO_Level5_Latch ] };
  };
 
 partial alphanumeric_keys
@@ -485,7 +485,6 @@ xkb_symbols "mac" {
     include "de"
     name[Group1]= "German (Macintosh)";
 
-    // Alphanumeric section
     key <AE01>	{ [         1,     exclam,   exclamdown,           at ]	};
     key <AE05>	{ [         5,    percent,  bracketleft       ]	};
     key <AE06>	{ [         6,  ampersand, bracketright       ]	};
@@ -512,9 +511,9 @@ xkb_symbols "mac_nodeadkeys" {
     // modify the standard German mac layout to not have any dead keys
     include "de(mac)"
     name[Group1]= "German (Macintosh, eliminate dead keys)";
-    key <AE04>	{ [         4,     dollar,   onequarter,     currency ]	};
 
     key <TLDE>	{ [ asciicircum,    degree,     notsign       ]	};
+    key <AE04>	{ [          4,     dollar,  onequarter,     currency ]	};
     key <AE12>	{ [      acute,      grave,     cedilla       ]	};
     key <AD11>	{ [ udiaeresis, Udiaeresis,   diaeresis       ]	};
     key <AD12>	{ [       plus,   asterisk,  asciitilde,       macron ]	};
@@ -598,7 +597,7 @@ xkb_symbols "ru" {
  
     name[Group1]= "Russian (Germany, phonetic)";
 
-key.type[group1]="FOUR_LEVEL_ALPHABETIC";
+    key.type[group1]="FOUR_LEVEL_ALPHABETIC";
 
     key <LatA> { [        Cyrillic_a,        Cyrillic_A ] };
     key <LatB> { [       Cyrillic_be,       Cyrillic_BE ] };
@@ -725,8 +724,6 @@ xkb_symbols "hu" {
     key <AE12> { [     acute,      grave,        oacute,      Oacute ] };
     key <BKSL> { [numbersign, apostrophe,         grave,       grave ] };
     key <TLDE> { [asciicircum,    degree,       notsign,     notsign ] };
-    
-    
 };
 
 partial alphanumeric_keys
